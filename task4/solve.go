@@ -1,8 +1,8 @@
 package main
 
-import "fmt"
 import "regexp"
 import "strings"
+
 
 /* TASK 1
  *
@@ -55,7 +55,7 @@ func PowerGenerator(seed int) func() int {
  ******************************************************************************/
 
 func PrepareString(prepared_string string) string {
-	non_letters := regexp.MustCompile(`\W`)
+	non_letters := regexp.MustCompile(`\P{L}`)
 	result := non_letters.ReplaceAllString(prepared_string, " ")
 	multiple_spaces := regexp.MustCompile(`\s+`)
 	result = multiple_spaces.ReplaceAllString(result, " ")
@@ -65,7 +65,7 @@ func PrepareString(prepared_string string) string {
 }
 
 func GetWords(extracted_string string) []string {
-    words:= regexp.MustCompile(`\w+`)
+    words:= regexp.MustCompile(`\p{L}+`)
     return words.FindAllString(extracted_string, -1)
 }
 
