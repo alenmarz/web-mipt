@@ -1,9 +1,6 @@
 package main
 
-<<<<<<< HEAD
-=======
 /*import "fmt"*/
->>>>>>> 0feb33b3a17d5b4ba9959d8e3afc13b024b53caf
 import "regexp"
 import "strings"
 
